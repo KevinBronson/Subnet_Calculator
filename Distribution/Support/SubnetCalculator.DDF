@@ -1,0 +1,45 @@
+.OPTION EXPLICIT
+.Set Cabinet=off
+.Set Compress=off
+.Set MaxDiskSize=CDROM
+.Set ReservePerCabinetSize=6144
+.Set DiskDirectoryTemplate=".."
+.Set CompressionType=MSZIP
+.Set CompressionLevel=7
+.Set CompressionMemory=21
+.Set CabinetNameTemplate="SubnetCalculator.CAB"
+"Setup.Lst"
+"setup.exe"
+.Set Cabinet=on
+.Set Compress=on
+"SubnetCalculator.exe"
+"msvbvm60.dll"
+"OLEAUT32.DLL"
+"OLEPRO32.DLL"
+"ASYCFILT.DLL"
+"STDOLE2.TLB"
+"COMCAT.DLL"
+"msstdfmt.dll"
+"scrrun.dll"
+"msvcrt.dll"
+"MSCOMCTL.OCX"
+"help.chm"
+"hhctrl.ocx"
+"itss.dll"
+"itircl.dll"
+"hh.exe"
+"SETUP1.EXE"
+"VB6STKIT.DLL"
+"ST6UNST.EXE"
+"Table of Contents.hhc"
+"help.hhp"
+"Index.hhk"
+"HowSubnetMasksAreUsed.htm"
+"Introduction.htm"
+"SubnetMasks.htm"
+"BooleanFunctions.htm"
+"IP_AddressClasses.htm"
+"SK_GreyBackGround.jpg"
+"SK_Small_Logo.bmp"
+"NonRoutable.htm"
+"LICENSE.txt"

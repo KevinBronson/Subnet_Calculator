@@ -1,0 +1,211 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Subnet Masks</title>
+</head>
+
+<body background="../images/SK_GreyBackGround.jpg" text="#003300">
+
+<h1 align="center">Subnet Masks</h1>
+<p>&nbsp;</p>
+<H3>Hosts and Networks</H3>
+<p>In computer networking, the term 'host' refers to any computer attached to a 
+computer network. Thus a server can be a host and a user's computer can be a 
+host; all computers on the network whether they are a server or client computer, 
+are hosts.</p>
+<p>Often large organizations will have more than one network. In some cases they 
+may have several or even more networks. These networks can be connected to each 
+other and often are. Thus there is a need to keep track of which network is 
+which and which host is on which network. This complex task is partly done by 
+using subnet masks. A subnet mask (in it's simplest role) is used to break an IP 
+Address into two parts: the network part and the host part. The network part is 
+often referred to as the 'Network ID' and looks like an ordinary IP Address but 
+often ends with a '0' (for example, 192.158.25.0). </p>
+<p>A subnet mask is used to determine the network and host part of an IP 
+Address. </p>
+<table border="2" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#003300" width="300" id="AutoNumber2">
+  <tr>
+    <td width="50%">
+    <p align="center">Network Part</td>
+    <td width="50%">
+    <p align="center">Host Part</td>
+  </tr>
+</table>
+<p>To make sense of how this works, first you must look at the subnet mask in 
+its binary format. For example, the subnet mask '255.255.255.0' is shown below:</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber3">
+  <tr>
+    <td width="25%" align="center">255</td>
+    <td width="25%" align="center">255</td>
+    <td width="25%" align="center">255</td>
+    <td width="25%" align="center">0</td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">1111 1111</td>
+    <td width="25%" align="center">1111 1111</td>
+    <td width="25%" align="center">1111 1111</td>
+    <td width="25%" align="center">0000 0000</td>
+  </tr>
+</table>
+<p>The network part is simply where the ones are and the host part is where the 
+zeros are. For example:</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber3">
+  <tr>
+    <td width="25%" align="center">255</td>
+    <td width="25%" align="center">255</td>
+    <td width="25%" align="center">255</td>
+    <td width="25%" align="center">0</td>
+  </tr>
+  <tr>
+    <td width="25%" align="center">1111 1111</td>
+    <td width="25%" align="center">1111 1111</td>
+    <td width="25%" align="center">1111 1111</td>
+    <td width="25%" align="center">0000 0000</td>
+  </tr>
+  <tr>
+    <td width="75%" align="center" colspan="3"><b>Network Part</b></td>
+    <td width="25%" align="center"><b>Host Part</b></td>
+  </tr>
+</table>
+<p>Often when discussing subnet masking, an 'n' is used do denote the bit-places 
+for the network part and an 'h' is used to denote the bit-places of the host 
+part. For example, the above subnet mask would be denoted as:
+<FONT COLOR="#000080">nnnnnnnn.nnnnnnnn.nnnnnnnn</FONT>.<FONT COLOR="#800000">hhhhhhhh</FONT></p>
+<p>(Please note that the color coding I am using here is NOT a standard.)</p>
+<p>Here is a table to further demonstrate this point:</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber3">
+  <tr>
+    <td width="25%" align="center">255</td>
+    <td width="25%" align="center">255</td>
+    <td width="25%" align="center">255</td>
+    <td width="25%" align="center">0</td>
+  </tr>
+  <TR>
+    <td width="25%" align="center">1111 1111</td>
+    <td width="25%" align="center">1111 1111</td>
+    <td width="25%" align="center">1111 1111</td>
+    <td width="25%" align="center">0000 0000</td>
+  </TR>
+  <tr>
+    <td width="25%" align="center"><FONT COLOR="#000080">nnnn nnnn</FONT></td>
+    <td width="25%" align="center"><FONT COLOR="#000080">nnnn nnnn</FONT></td>
+    <td width="25%" align="center"><FONT COLOR="#000080">nnnn nnnn</FONT></td>
+    <td width="25%" align="center"><FONT COLOR="#800000">hhhh hhhh</FONT></td>
+  </tr>
+  <tr>
+    <td width="75%" align="center" colspan="3"><b>Network Part</b></td>
+    <td width="25%" align="center"><b>Host Part</b></td>
+  </tr>
+</table>
+<p>A short hand notation that is sometimes used for subnet masks like this is:
+<B><FONT COLOR="#000080">N.N.N</FONT>.<FONT COLOR="#800000">H</FONT></B></p>
+<p>&nbsp;</p>
+<H3>Default Subnet Masks</H3>
+<p>IP Addresses are broken up into different 'classes' (<A HREF="IP_AddressClasses.htm">click 
+here to see a chart of these classes</A>). The first three classes (A, B, and C) 
+have default subnet masks which are listed below:</p>
+  <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1" WIDTH="434">
+    <tr>
+      <td align="center" width="70"><B>Class</B></td>
+      <td width="180" align="center"><B>Network-Host Parts</B></td>
+      <td width="180">
+      <P ALIGN="center"><B>Default Subnet Mask</B></td>
+    </tr>
+    <tr>
+      <td align="center" width="70"><b>A</b></td>
+      <td width="180" align="center"><B><FONT COLOR="#000080">N</FONT><FONT COLOR="#800000">.H.H.H</FONT></B></td>
+      <td width="180">&nbsp;&nbsp; 255.0.0.0</td>
+    </tr>
+    <tr>
+      <td align="center" width="70"><b>B</b></td>
+      <td width="180" align="center"><B><FONT COLOR="#000080">N.N</FONT><FONT COLOR="#800000">.H.H</FONT></B></td>
+      <td width="180">&nbsp;&nbsp; 255.255.0.0</td>
+    </tr>
+    <tr>
+      <td align="center" width="70"><b>C</b></td>
+      <td width="180" align="center"><B><FONT COLOR="#000080">N.N.N</FONT><FONT COLOR="#800000">.H</FONT></B></td>
+      <td width="180">&nbsp;&nbsp; 255.255.255.0</td>
+    </tr>
+  </table>
+<p>&nbsp;</p>
+<H3>Sub-Networks and Subnet-Bits</H3>
+<p>Organizations often need to further subdivide a given network. If an 
+organization receives a complete set of Class B IP Address, for example it 
+receives use of all the IP Address available to Network ID 130.10.0.0 (<B><FONT COLOR="#000080">N.N</FONT><FONT COLOR="#800000">.H.H</FONT></B>), 
+then 65,534 host can be put on that network. Often it is not practical to put 
+that many hosts on a single network so they will create 'sub-networks'. In other 
+words, they will break their network up into parts. These pieces of the original 
+network are called 'sub-networks'.</p>
+<p>Here is a chart that shows a Class B subnet mask with a single 'subnet-bit' 
+added:</p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber3">
+  <tr>
+    <td width="25%" align="center">255</td>
+    <td width="25%" align="center">255</td>
+    <td width="25%" align="center">128</td>
+    <td width="25%" align="center">0</td>
+  </tr>
+  <TR>
+    <td width="25%" align="center">1111 1111</td>
+    <td width="25%" align="center">1111 1111</td>
+    <td width="25%" align="center">1000 000</td>
+    <td width="25%" align="center">0000 0000</td>
+  </TR>
+  <tr>
+    <td width="25%" align="center"><FONT COLOR="#000080">nnnn nnnn</FONT></td>
+    <td width="25%" align="center"><FONT COLOR="#000080">nnnn nnnn</FONT></td>
+    <td width="25%" align="center"><FONT COLOR="#008000">s</FONT><FONT COLOR="#800000">hhh 
+    hhhh</FONT></td>
+    <td width="25%" align="center"><FONT COLOR="#800000">hhhh hhhh</FONT></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" colspan="2"><b>Network Part</b></td>
+    <td width="25%" align="center"><B>Sub/Host</B></td>
+    <td width="25%" align="center"><b>Host Part</b></td>
+  </tr>
+</table>
+<p>Notice the single bit that is denoted by a single 's'. This 'subnet-bit' divides the 
+network into two sub-networks as shown in the chart below.</p>
+
+<table border=1 WIDTH="100%" HEIGHT="109" STYLE="border-collapse: collapse" BORDERCOLOR="#111111" CELLPADDING="0" CELLSPACING="0">
+<tr>
+<td COLSPAN="2">
+<P ALIGN="center"><FONT COLOR="#000080"><B>Given Network (Class B IP Addresses)</B></FONT><tr>
+<td COLSPAN="2">
+<P ALIGN="center"><FONT COLOR="#000080">Network ID: 130.10.0.0 (Host Range 130.10.0.1 to 130.10.255.254)</FONT><tr>
+<td>
+<P ALIGN="center"><FONT COLOR="#008000"><B>First Sub-Network</B></FONT></td>
+<td>
+<P ALIGN="center"><FONT COLOR="#008000"><B>Second Sub-Network</B></FONT></td>
+</tr>
+
+<tr>
+<td ALIGN="center"><FONT COLOR="#008000">Network ID: 130.10.0.0 <br>(Host 
+Range: 130.10.0.1 to 130.10.127.254)</FONT></td>
+<td ALIGN="center"><FONT COLOR="#008000">Network ID: 130.10.128.0 <br>(Host 
+Range: 130.10.128.1 to 130.10.255.254)</FONT></td>
+</tr>
+</table>
+
+<p>If another 'subnet-bit' were added (<FONT COLOR="#000080">nnnnnnnn.nnnnnnnn</FONT>.<FONT COLOR="#008000">ss</FONT><FONT COLOR="#800000">hhhhhh.hhhhhhhh</FONT>), 
+then the network would be divided into 4 sub-networks. If 3 'subnet-bits' were 
+added (<FONT COLOR="#000080">nnnnnnnn.nnnnnnnn</FONT>.<FONT COLOR="#008000">sss</FONT><FONT COLOR="#800000">hhhhh.hhhhhhhh</FONT>), 
+then the network would be divided into 8 sub-networks, and so on. The formula 
+for determining the number of sub-networks is: </p>
+
+<p><FONT COLOR="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <I>(number of subnet-bits)</I><br>
+<FONT SIZE="6">2</FONT></FONT></p>
+<p><FONT COLOR="#008000">[Read 'Two to the power of the number of subnet-bits'.]</FONT></p>
+<p>&nbsp;</p>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</body>
+
+</html>

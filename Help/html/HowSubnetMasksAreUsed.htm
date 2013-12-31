@@ -1,0 +1,38 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>How Subnet Masks Are Used</title>
+</head>
+
+<body background="../images/SK_GreyBackGround.jpg" text="#003300">
+
+<h1 align="center">How Subnet Masks Are Used</h1>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; <a href="SubnetMasks.htm">Subnet masks</a> are used to 
+determine the Network ID. Routers do this by performing a
+<a href="BooleanFunctions.htm">binary 'AND' function</a> on the given IP Address 
+and the subnet mask (routers need to do this to figure out which network to send 
+a given packet to). Remember that every IP Address is actually a binary number 
+(a string of 32 ones and zeros). The same is true of a subnet mask.</p>
+<p>
+1100 0000<b><font size="4">.</font></b>1010 1000<b><font size="4">.</font></b>0000 1010<b><font size="4">.</font></b>0010 0101&nbsp; - IP Address (192.168.10.37)<br>
+1111 1111<b><font size="4">.</font></b>1111 1111<b><font size="4">.</font></b>1111 1111<b><font size="4">.</font></b>0000 0000&nbsp; - Subnet Mask (255.255.255.0)<br>
+------------------------------------------------ <br>
+1100 0000<b><font size="4">.</font></b>1010 1000<b><font size="4">.</font></b>0000 
+1010<b><font size="4">.</font></b>0000 0000&nbsp; - Network ID (192.168.10.0)<br>
+====== <b>Network Part</b> ======&nbsp; |<b> Host Part </b>
+
+</p>
+<p>Notice that each bit of the Network ID is only a one if the corresponding 
+bits of the subnet mask and the IP Address are both ones.</p>
+<p>&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+
+</html>
